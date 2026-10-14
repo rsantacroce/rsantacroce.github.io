@@ -22,15 +22,18 @@ def gh(repo):
 def card(p):
     private = p.get("private", False)
     # Private repos link to their public site if they have one, otherwise nothing.
-    main = p.get("url") or (None if private else gh(p["repo"]))
+    main = p.get("url") or p.get("pages") or (None if private else gh(p["repo"]))
     title = escape(p["name"])
     title = f'<a href="{escape(main)}">{title}</a>' if main else title
     links = []
     if p.get("repo") and not private:
         links.append(f'<a href="{gh(p["repo"])}">{escape(p["repo"])}</a>')
-    if p.get("url"):
-        host = p["url"].split("//", 1)[1].rstrip("/")
-        links.append(f'<a href="{escape(p["url"])}">{escape(host)}</a>')
+    # Public repo holding the project's GitHub Pages site.
+    if p.get("site_repo"):
+        links.append(f'<a href="{gh(p["site_repo"])}">{escape(p["site_repo"])}</a>')
+    for u in dict.fromkeys(filter(None, [p.get("url"), p.get("pages")])):
+        host = u.split("//", 1)[1].rstrip("/")
+        links.append(f'<a href="{escape(u)}">{escape(host)}</a>')
     meta = []
     if p.get("lang"):
         meta.append(f'<span class="lang">{escape(p["lang"])}</span>')
@@ -82,7 +85,7 @@ def build_readme():
         public = [p for p in s["projects"] if not p.get("private") or p.get("url")][:4]
         items = []
         for p in public:
-            link = p.get("url") or gh(p["repo"])
+            link = p.get("url") or p.get("pages") or gh(p["repo"])
             items.append(f"[{p['name']}]({link})")
         out.append(f"- **{s['title']}**: {', '.join(items)}")
     out += ["", f"More, with descriptions, at **[{PAGE_URL.split('//')[1]}]({PAGE_URL})**.", ""]

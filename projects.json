@@ -40,7 +40,8 @@
           "name": "simplepool",
           "desc": "Single-binary C11 stratum mining pool for drivechain networks: solo, PPS and PPLNS payouts, a SQLite ledger, and Thunder or L1 payouts.",
           "repo": "LayerTwo-Labs/simplepool",
-          "lang": "C"
+          "lang": "C",
+          "pages": "https://layertwo-labs.github.io/simplepool/"
         },
         {
           "name": "forknet-bootstrap",
@@ -181,26 +182,10 @@
       "intro": "A Lisp for personal data management, inspired by dBASE III and Lotus Agenda, and the editors built around it.",
       "projects": [
         {
-          "name": "EEditor",
-          "desc": "Fast native editor for Apple platforms with Markdown preview, syntax highlighting for 24+ languages, and a built-in Lisp REPL.",
-          "url": "https://eeditor.app",
-          "repo": "santacroce-tech/eeditor",
-          "private": true,
-          "lang": "Swift"
-        },
-        {
           "name": "eeditor-next",
           "desc": "The next EEditor: native Markdown and code editor with embedded EELisp, built on TypeScript, CodeMirror 6 and Tauri for desktop and iOS.",
           "repo": "santacroce-tech/eeditor-next",
           "lang": "TypeScript"
-        },
-        {
-          "name": "EELisp",
-          "desc": "The original EELisp interpreter in Swift: a Lisp for personal data management.",
-          "url": "https://eelisp.app",
-          "repo": "santacroce-tech/eelisp",
-          "private": true,
-          "lang": "Swift"
         },
         {
           "name": "eelisp-rs",
@@ -234,7 +219,8 @@
           "desc": "Finds and redacts personal data in legal documents (PDFs, Word files, scans) so the redacted text is really gone. Runs entirely on your machine.",
           "url": "https://qvault.tech",
           "repo": "santacroce-tech/qvault",
-          "lang": "Rust · Tauri"
+          "lang": "Rust · Tauri",
+          "pages": "https://santacroce-tech.github.io/qvault/"
         },
         {
           "name": "Zoetrope",
@@ -284,7 +270,8 @@
           "desc": "Kid-friendly pixel art editor for Android and desktop, in Kotlin Multiplatform and Compose.",
           "url": "https://rsantacroce.github.io/pixel-pals-site/",
           "repo": "rsantacroce/pixel-pals",
-          "lang": "Kotlin"
+          "lang": "Kotlin",
+          "site_repo": "rsantacroce/pixel-pals-site"
         },
         {
           "name": "CoParent",
@@ -375,14 +362,16 @@
           "desc": "Online RPG set around 1999 to 2003.",
           "url": "https://rsantacroce.github.io/millennium-site/",
           "repo": "rsantacroce/millennium",
-          "lang": "Rust · Bevy"
+          "lang": "Rust · Bevy",
+          "site_repo": "rsantacroce/millennium-site"
         },
         {
           "name": "Parcels",
           "desc": "Co-op and competitive neighbourhood city builder: one shared map, separate parcels and budgets, and power and water traded between neighbours. LAN multiplayer, AI rivals, street view.",
           "url": "https://rsantacroce.github.io/parcels-site/",
           "repo": "rsantacroce/parcels",
-          "lang": "Rust · Bevy"
+          "lang": "Rust · Bevy",
+          "site_repo": "rsantacroce/parcels-site"
         },
         {
           "name": "Societies",
@@ -390,7 +379,8 @@
           "url": "https://rsantacroce.github.io/societies-site/",
           "repo": "rsantacroce/societies",
           "private": true,
-          "lang": "Rust · Bevy"
+          "lang": "Rust · Bevy",
+          "site_repo": "rsantacroce/societies-site"
         },
         {
           "name": "Harrow Reach",
@@ -398,7 +388,8 @@
           "url": "https://rsantacroce.github.io/harrow-reach-site/",
           "repo": "rsantacroce/harrow-reach",
           "private": true,
-          "lang": "Rust"
+          "lang": "Rust",
+          "site_repo": "rsantacroce/harrow-reach-site"
         },
         {
           "name": "Iron Atoll",
