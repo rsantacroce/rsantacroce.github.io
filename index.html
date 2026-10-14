@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roberto Santacroce Martins: Projects</title>
+<meta name="description" content="Programmer. I contribute to open source in my spare time, mostly around Bitcoin and local-first software.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf7; --surface: #ffffff; --text: #1d1d1b; --muted: #6b6a66;
+    --border: #e6e3dc; --accent: #c2410c; --accent-soft: #fdeee4; --chip: #f2efe8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141413; --surface: #1c1c1a; --text: #ecebe7; --muted: #9b9a95;
+      --border: #2e2d2a; --accent: #f08a4b; --accent-soft: #33231a; --chip: #262523;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 Inter, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  header { padding: 72px 0 40px; border-bottom: 1px solid var(--border); }
+  .eyebrow { font: 500 13px/1 "JetBrains Mono", monospace; color: var(--accent); letter-spacing: .04em; text-transform: uppercase; }
+  h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.1; letter-spacing: -.02em; margin: 14px 0 12px; font-weight: 600; }
+  .tagline { font-size: 19px; color: var(--muted); margin: 0 0 28px; max-width: 680px; }
+  .bio { max-width: 700px; }
+  .bio p { margin: 0 0 14px; }
+  .profile-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+  .profile-links a {
+    text-decoration: none; font-size: 14px; padding: 6px 12px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--surface);
+  }
+  .profile-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+  .toolbar {
+    position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 12px 0;
+  }
+  .toolbar .wrap { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  nav { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
+  nav a { text-decoration: none; font-size: 14px; color: var(--muted); padding: 4px 10px; border-radius: 6px; }
+  nav a:hover { color: var(--text); background: var(--chip); }
+  input[type=search] {
+    font: inherit; font-size: 14px; padding: 7px 12px; width: 220px; max-width: 100%;
+    border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text);
+  }
+  input[type=search]:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+
+  section { padding: 48px 0 8px; scroll-margin-top: 64px; }
+  h2 { font-size: 22px; margin: 0 0 4px; font-weight: 600; letter-spacing: -.01em; }
+  .count { font: 500 13px "JetBrains Mono", monospace; color: var(--muted); margin-left: 6px; }
+  .intro { color: var(--muted); margin: 0 0 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px;
+    transition: border-color .15s, transform .15s;
+  }
+  .card:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); transform: translateY(-1px); }
+  .card h3 { margin: 0; font-size: 16px; font-weight: 600; }
+  .card h3 a { text-decoration: none; }
+  .card h3 a:hover { color: var(--accent); }
+  .card p { margin: 0; font-size: 14.5px; color: var(--muted); flex: 1; }
+  .meta { display: flex; gap: 6px; flex-wrap: wrap; }
+  .meta span { font: 500 12px/1 "JetBrains Mono", monospace; padding: 5px 8px; border-radius: 6px; }
+  .lang { background: var(--chip); color: var(--muted); }
+  .private { background: var(--accent-soft); color: var(--accent); }
+  .links { font: 12.5px "JetBrains Mono", monospace; color: var(--muted); overflow-wrap: anywhere; }
+  .links a { text-decoration: none; }
+  .links a:hover { color: var(--accent); text-decoration: underline; }
+  .empty { display: none; color: var(--muted); padding: 40px 0; text-align: center; }
+
+  footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 0 16px; }
+    header { padding-top: 48px; }
+    .grid { grid-template-columns: 1fr; }
+    input[type=search] { width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Madrid · Programmer</div>
+      <h1>Roberto Santacroce Martins</h1>
+      <p class="tagline">Programmer. I contribute to open source in my spare time, mostly around Bitcoin and local-first software.</p>
+      <div class="bio"><p>I&#x27;m a programmer from Brazil, living in Madrid. I&#x27;ve been writing software for a little over twenty years and I still enjoy it.</p><p>In my free time I contribute to open source, mainly Drivechain (BIP300/301) and Layer Two Labs sidechains, and I build small tools I want to use myself: local-first apps, a Lisp for personal data, and a few games.</p><p>I mostly write Rust, C/C++, Swift and TypeScript, and I like software that runs locally and doesn&#x27;t need permission to exist.</p></div>
+      <div class="profile-links"><a href="https://roberto.santacroce.xyz">Blog: Pensaduras</a><a href="https://github.com/rsantacroce">GitHub</a><a href="https://github.com/santacroce-tech">santacroce-tech</a><a href="https://x.com/santacrocerob">X / Twitter</a><a href="mailto:info@santacroce.xyz">Email</a></div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="wrap">
+      <nav><a href="#bitcoin">Bitcoin &amp; Drivechain</a><a href="#upstream">Upstream contributions</a><a href="#eelisp">EELisp &amp; editors</a><a href="#apps">Apps &amp; products</a><a href="#research">Cryptography, ZK &amp; security</a><a href="#games">Games</a></nav>
+      <input type="search" id="q" placeholder="Filter 52 projects…" aria-label="Filter projects">
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section id="bitcoin">
+      <h2>Bitcoin &amp; Drivechain <span class="count">11</span></h2>
+      <p class="intro">My own Bitcoin tooling, mostly around BIP300/301 drivechains.</p>
+      <div class="grid">
+      <article class="card" data-search="simplepool single-binary c11 stratum mining pool for drivechain networks: solo, pps and pplns payouts, a sqlite ledger, and thunder or l1 payouts. c layertwo-labs/simplepool">
+        <h3><a href="https://github.com/LayerTwo-Labs/simplepool">simplepool</a></h3>
+        <p>Single-binary C11 stratum mining pool for drivechain networks: solo, PPS and PPLNS payouts, a SQLite ledger, and Thunder or L1 payouts.</p>
+        <div class="meta"><span class="lang">C</span></div>
+        <div class="links"><a href="https://github.com/LayerTwo-Labs/simplepool">LayerTwo-Labs/simplepool</a></div>
+      </article>
+      <article class="card" data-search="forknet-bootstrap provisions a full bip300/301 forknet node (bitcoind, enforcer, thunder and a simplepool mining pool) on a fresh ubuntu server. shell rsantacroce/forknet-bootstrap">
+        <h3><a href="https://github.com/rsantacroce/forknet-bootstrap">forknet-bootstrap</a></h3>
+        <p>Provisions a full BIP300/301 forknet node (bitcoind, enforcer, Thunder and a simplepool mining pool) on a fresh Ubuntu server.</p>
+        <div class="meta"><span class="lang">Shell</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/forknet-bootstrap">rsantacroce/forknet-bootstrap</a></div>
+      </article>
+      <article class="card" data-search="btc-keytool offline bitcoin key and transaction tool. one file, no dependencies, no network: derive every address type from a private key and sign transactions air-gapped. python rsantacroce/btc-keytool">
+        <h3><a href="https://github.com/rsantacroce/btc-keytool">btc-keytool</a></h3>
+        <p>Offline Bitcoin key and transaction tool. One file, no dependencies, no network: derive every address type from a private key and sign transactions air-gapped.</p>
+        <div class="meta"><span class="lang">Python</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/btc-keytool">rsantacroce/btc-keytool</a></div>
+      </article>
+      <article class="card" data-search="kleo desktop crypto workbench keyed to bitnames: sign, verify, encrypt and decrypt by name, publish a profile, and message peer to peer. rust rsantacroce/kleo">
+        <h3>Kleo</h3>
+        <p>Desktop crypto workbench keyed to BitNames: sign, verify, encrypt and decrypt by name, publish a profile, and message peer to peer.</p>
+        <div class="meta"><span class="lang">Rust</span><span class="private" title="Private repository">Private</span></div>
+        
+      </article>
+      <article class="card" data-search="hashrate_derivative a minimal, working cash-settled hashrate forward on the liquid network. rust rsantacroce/hashrate_derivative">
+        <h3><a href="https://github.com/rsantacroce/hashrate_derivative">hashrate_derivative</a></h3>
+        <p>A minimal, working cash-settled hashrate forward on the Liquid Network.</p>
+        <div class="meta"><span class="lang">Rust</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/hashrate_derivative">rsantacroce/hashrate_derivative</a></div>
+      </article>
+      <article class="card" data-search="python-bridge-drivechain relays bitcoin mainnet transactions to a fork chain, either streaming over zmq or block by block. python rsantacroce/python-bridge-drivechain">
+        <h3><a href="https://github.com/rsantacroce/python-bridge-drivechain">python-bridge-drivechain</a></h3>
+        <p>Relays Bitcoin mainnet transactions to a fork chain, either streaming over ZMQ or block by block.</p>
+        <div class="meta"><span class="lang">Python</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/python-bridge-drivechain">rsantacroce/python-bridge-drivechain</a></div>
+      </article>
+      <article class="card" data-search="drivechain-explorer address viewer and explorer for drivechain transactions, with a small flask backend. html santacroce-tech/drivechain-explorer">
+        <h3><a href="https://github.com/santacroce-tech/drivechain-explorer">drivechain-explorer</a></h3>
+        <p>Address viewer and explorer for drivechain transactions, with a small Flask backend.</p>
+        <div class="meta"><span class="lang">HTML</span></div>
+        <div class="links"><a href="https://github.com/santacroce-tech/drivechain-explorer">santacroce-tech/drivechain-explorer</a></div>
+      </article>
+      <article class="card" data-search="docker-mainchain-qt docker files to build and run the drivechain mainchain-qt client. shell rsantacroce/docker-mainchain-qt">
+        <h3><a href="https://github.com/rsantacroce/docker-mainchain-qt">docker-mainchain-qt</a></h3>
+        <p>Docker files to build and run the drivechain mainchain-qt client.</p>
+        <div class="meta"><span class="lang">Shell</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/docker-mainchain-qt">rsantacroce/docker-mainchain-qt</a></div>
+      </article>
+      <article class="card" data-search="open-bitcoin an open, from-scratch bitcoin implementation in c++. c++ rsantacroce/open-bitcoin">
+        <h3><a href="https://github.com/rsantacroce/open-bitcoin">open-bitcoin</a></h3>
+        <p>An open, from-scratch Bitcoin implementation in C++.</p>
+        <div class="meta"><span class="lang">C++</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/open-bitcoin">rsantacroce/open-bitcoin</a></div>
+      </article>
+      <article class="card" data-search="bitcoin-lisp a bitcoin implementation in lisp. work in progress. lisp rsantacroce/bitcoin-lisp">
+        <h3><a href="https://github.com/rsantacroce/bitcoin-lisp">bitcoin-lisp</a></h3>
+        <p>A Bitcoin implementation in Lisp. Work in progress.</p>
+        <div class="meta"><span class="lang">Lisp</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/bitcoin-lisp">rsantacroce/bitcoin-lisp</a></div>
+      </article>
+      <article class="card" data-search="bip300 / drivechain explainers on bip300 and bip301, hashrate escrows and blind merged mining. web ">
+        <h3><a href="https://bip300.xyz">BIP300 / Drivechain</a></h3>
+        <p>Explainers on BIP300 and BIP301, Hashrate Escrows and Blind Merged Mining.</p>
+        <div class="meta"><span class="lang">Web</span></div>
+        <div class="links"><a href="https://bip300.xyz">bip300.xyz</a></div>
+      </article>
+      </div>
+    </section>
+    <section id="upstream">
+      <h2>Upstream contributions <span class="count">11</span></h2>
+      <p class="intro">Open-source projects I contribute to.</p>
+      <div class="grid">
+      <article class="card" data-search="bip300301_enforcer cusf software enforcing the bip300 and bip301 rules. rust layertwo-labs/bip300301_enforcer">
+        <h3><a href="https://github.com/LayerTwo-Labs/bip300301_enforcer">bip300301_enforcer</a></h3>
+        <p>CUSF software enforcing the BIP300 and BIP301 rules.</p>
+        <div class="meta"><span class="lang">Rust</span></div>
+        <div class="links"><a href="https://github.com/LayerTwo-Labs/bip300301_enforcer">LayerTwo-Labs/bip300301_enforcer</a></div>
+      </article>
+      <article class="card" data-search="bip300_bip301_specifications implementation-ready specifications for bip300 and bip301. spec layertwo-labs/bip300_bip301_specifications">
+        <h3><a href="https://github.com/LayerTwo-Labs/bip300_bip301_specifications">bip300_bip301_specifications</a></h3>
+        <p>Implementation-ready specifications for BIP300 and BIP301.</p>
+        <div class="meta"><span class="lang">Spec</span></div>
+        <div class="links"><a href="https://github.com/LayerTwo-Labs/bip300_bip301_specifications">LayerTwo-Labs/bip300_bip301_specifications</a></div>
+      </article>
+      <article class="card" data-search="cusf-enforcer-mempool fixes getblocktemplate so it always mines cusf-compliant blocks. rust layertwo-labs/cusf-enforcer-mempool">
+        <h3><a href="https://github.com/LayerTwo-Labs/cusf-enforcer-mempool">cusf-enforcer-mempool</a></h3>
+        <p>Fixes getblocktemplate so it always mines CUSF-compliant blocks.</p>
+        <div class="meta"><span class="lang">Rust</span></div>
+        <div class="links"><a href="https://github.com/LayerTwo-Labs/cusf-enforcer-mempool">LayerTwo-Labs/cusf-enforcer-mempool</a></div>
+      </article>
+      <article class="card" data-search="thunder-rust a sidechain with a large, growing block size, plus fraud proofs. rust layertwo-labs/thunder-rust">
+        <h3><a href="https://github.com/LayerTwo-Labs/thunder-rust">thunder-rust</a></h3>
+        <p>A sidechain with a large, growing block size, plus fraud proofs.</p>
+        <div class="meta"><span class="lang">Rust</span></div>
+        <div class="links"><a href="https://github.com/LayerTwo-Labs/thunder-rust">LayerTwo-Labs/thunder-rust</a></div>
+      </article>
+      <article class="card" data-search="coinshift-rs bip300-style sidechain with a peer-to-peer, trustless l2-to-l1 swap system. rust layertwo-labs/coinshift-rs">
+        <h3><a href="https://github.com/LayerTwo-Labs/coinshift-rs">coinshift-rs</a></h3>
+        <p>BIP300-style sidechain with a peer-to-peer, trustless L2-to-L1 swap system.</p>
+        <div class="meta"><span class="lang">Rust</span></div>
+        <div class="links"><a href="https://github.com/LayerTwo-Labs/coinshift-rs">LayerTwo-Labs/coinshift-rs</a></div>
+      </article>
+      <article class="card" data-search="mining-pools mining pools for drivechain networks.  layertwo-labs/mining-pools">
+        <h3><a href="https://github.com/LayerTwo-Labs/mining-pools">mining-pools</a></h3>
+        <p>Mining pools for drivechain networks.</p>
+        <div class="meta"></div>
+        <div class="links"><a href="https://github.com/LayerTwo-Labs/mining-pools">LayerTwo-Labs/mining-pools</a></div>
+      </article>
+      <article class="card" data-search="bitcoin-patched layer two labs&#x27; version of bitcoin core. c++ layertwo-labs/bitcoin-patched">
+        <h3><a href="https://github.com/LayerTwo-Labs/bitcoin-patched">bitcoin-patched</a></h3>
+        <p>Layer Two Labs&#x27; version of Bitcoin Core.</p>
+        <div class="meta"><span class="lang">C++</span></div>
+        <div class="links"><a href="https://github.com/LayerTwo-Labs/bitcoin-patched">LayerTwo-Labs/bitcoin-patched</a></div>
+      </article>
+      <article class="card" data-search="cpuminer cpu miner for litecoin and bitcoin. c layertwo-labs/cpuminer">
+        <h3><a href="https://github.com/LayerTwo-Labs/cpuminer">cpuminer</a></h3>
+        <p>CPU miner for Litecoin and Bitcoin.</p>
+        <div class="meta"><span class="lang">C</span></div>
+        <div class="links"><a href="https://github.com/LayerTwo-Labs/cpuminer">LayerTwo-Labs/cpuminer</a></div>
+      </article>
+      <article class="card" data-search="sidechain-explorer block explorer for drivechain sidechains.  layertwo-labs/sidechain-explorer">
+        <h3><a href="https://github.com/LayerTwo-Labs/sidechain-explorer">sidechain-explorer</a></h3>
+        <p>Block explorer for drivechain sidechains.</p>
+        <div class="meta"></div>
+        <div class="links"><a href="https://github.com/LayerTwo-Labs/sidechain-explorer">LayerTwo-Labs/sidechain-explorer</a></div>
+      </article>
+      <article class="card" data-search="libbitcoin-node bitcoin full node from the libbitcoin project. c++ libbitcoin/libbitcoin-node">
+        <h3><a href="https://github.com/libbitcoin/libbitcoin-node">libbitcoin-node</a></h3>
+        <p>Bitcoin full node from the libbitcoin project.</p>
+        <div class="meta"><span class="lang">C++</span></div>
+        <div class="links"><a href="https://github.com/libbitcoin/libbitcoin-node">libbitcoin/libbitcoin-node</a></div>
+      </article>
+      <article class="card" data-search="fast-facts practical guides: how to split coins, how to mine, and more.  ecash-com/fast-facts">
+        <h3><a href="https://github.com/ecash-com/fast-facts">fast-facts</a></h3>
+        <p>Practical guides: how to split coins, how to mine, and more.</p>
+        <div class="meta"></div>
+        <div class="links"><a href="https://github.com/ecash-com/fast-facts">ecash-com/fast-facts</a></div>
+      </article>
+      </div>
+    </section>
+    <section id="eelisp">
+      <h2>EELisp &amp; editors <span class="count">6</span></h2>
+      <p class="intro">A Lisp for personal data management, inspired by dBASE III and Lotus Agenda, and the editors built around it.</p>
+      <div class="grid">
+      <article class="card" data-search="eeditor fast native editor for apple platforms with markdown preview, syntax highlighting for 24+ languages, and a built-in lisp repl. swift santacroce-tech/eeditor">
+        <h3><a href="https://eeditor.app">EEditor</a></h3>
+        <p>Fast native editor for Apple platforms with Markdown preview, syntax highlighting for 24+ languages, and a built-in Lisp REPL.</p>
+        <div class="meta"><span class="lang">Swift</span><span class="private" title="Private repository">Private</span></div>
+        <div class="links"><a href="https://eeditor.app">eeditor.app</a></div>
+      </article>
+      <article class="card" data-search="eeditor-next the next eeditor: native markdown and code editor with embedded eelisp, built on typescript, codemirror 6 and tauri for desktop and ios. typescript santacroce-tech/eeditor-next">
+        <h3><a href="https://github.com/santacroce-tech/eeditor-next">eeditor-next</a></h3>
+        <p>The next EEditor: native Markdown and code editor with embedded EELisp, built on TypeScript, CodeMirror 6 and Tauri for desktop and iOS.</p>
+        <div class="meta"><span class="lang">TypeScript</span></div>
+        <div class="links"><a href="https://github.com/santacroce-tech/eeditor-next">santacroce-tech/eeditor-next</a></div>
+      </article>
+      <article class="card" data-search="eelisp the original eelisp interpreter in swift: a lisp for personal data management. swift santacroce-tech/eelisp">
+        <h3><a href="https://eelisp.app">EELisp</a></h3>
+        <p>The original EELisp interpreter in Swift: a Lisp for personal data management.</p>
+        <div class="meta"><span class="lang">Swift</span><span class="private" title="Private repository">Private</span></div>
+        <div class="links"><a href="https://eelisp.app">eelisp.app</a></div>
+      </article>
+      <article class="card" data-search="eelisp-rs eelisp in rust: embedded lisp interpreter, sqlite storage, and a lotus-agenda-style pim engine. rust santacroce-tech/eelisp-rs">
+        <h3><a href="https://github.com/santacroce-tech/eelisp-rs">eelisp-rs</a></h3>
+        <p>EELisp in Rust: embedded Lisp interpreter, SQLite storage, and a Lotus-Agenda-style PIM engine.</p>
+        <div class="meta"><span class="lang">Rust</span></div>
+        <div class="links"><a href="https://github.com/santacroce-tech/eelisp-rs">santacroce-tech/eelisp-rs</a></div>
+      </article>
+      <article class="card" data-search="eepilot macos app and cli that uses a local llm to write eelisp mini-apps from plain-english descriptions. swift santacroce-tech/eepilot">
+        <h3>EEPilot</h3>
+        <p>macOS app and CLI that uses a local LLM to write EELisp mini-apps from plain-English descriptions.</p>
+        <div class="meta"><span class="lang">Swift</span><span class="private" title="Private repository">Private</span></div>
+        
+      </article>
+      <article class="card" data-search="zzeelisp utility library of 120+ eelisp functions in 10 themed modules, inspired by funções zz. lisp santacroce-tech/zzeelisp">
+        <h3>zzeelisp</h3>
+        <p>Utility library of 120+ EELisp functions in 10 themed modules, inspired by Funções ZZ.</p>
+        <div class="meta"><span class="lang">Lisp</span><span class="private" title="Private repository">Private</span></div>
+        
+      </article>
+      </div>
+    </section>
+    <section id="apps">
+      <h2>Apps &amp; products <span class="count">13</span></h2>
+      <p class="intro">Local-first apps and small products I build.</p>
+      <div class="grid">
+      <article class="card" data-search="qvault finds and redacts personal data in legal documents (pdfs, word files, scans) so the redacted text is really gone. runs entirely on your machine. rust · tauri santacroce-tech/qvault">
+        <h3><a href="https://qvault.tech">Qvault</a></h3>
+        <p>Finds and redacts personal data in legal documents (PDFs, Word files, scans) so the redacted text is really gone. Runs entirely on your machine.</p>
+        <div class="meta"><span class="lang">Rust · Tauri</span></div>
+        <div class="links"><a href="https://github.com/santacroce-tech/qvault">santacroce-tech/qvault</a> · <a href="https://qvault.tech">qvault.tech</a></div>
+      </article>
+      <article class="card" data-search="zoetrope flash-style animation studio: draw, animate, script in javascript, and export one html file that plays anywhere. rust/wasm core, tauri app for macos, windows and linux. rust santacroce-tech/zoetrope">
+        <h3><a href="https://santacroce-tech.github.io/zoetrope/">Zoetrope</a></h3>
+        <p>Flash-style animation studio: draw, animate, script in JavaScript, and export one HTML file that plays anywhere. Rust/WASM core, Tauri app for macOS, Windows and Linux.</p>
+        <div class="meta"><span class="lang">Rust</span></div>
+        <div class="links"><a href="https://github.com/santacroce-tech/zoetrope">santacroce-tech/zoetrope</a> · <a href="https://santacroce-tech.github.io/zoetrope/">santacroce-tech.github.io/zoetrope</a></div>
+      </article>
+      <article class="card" data-search="supersynch syncthing on iphone and ipad: sync folders straight with your mac, peer to peer. native swiftui with an embedded syncthing engine. swift santacroce-tech/supersynch">
+        <h3><a href="https://santacroce-tech.github.io/supersynch/">SuperSynch</a></h3>
+        <p>Syncthing on iPhone and iPad: sync folders straight with your Mac, peer to peer. Native SwiftUI with an embedded Syncthing engine.</p>
+        <div class="meta"><span class="lang">Swift</span></div>
+        <div class="links"><a href="https://github.com/santacroce-tech/supersynch">santacroce-tech/supersynch</a> · <a href="https://santacroce-tech.github.io/supersynch/">santacroce-tech.github.io/supersynch</a></div>
+      </article>
+      <article class="card" data-search="finance tracker local-first personal finance tracker in tauri and rust. rust · tauri santacroce-tech/financetracker">
+        <h3><a href="https://financetracker.pro">Finance Tracker</a></h3>
+        <p>Local-first personal finance tracker in Tauri and Rust.</p>
+        <div class="meta"><span class="lang">Rust · Tauri</span></div>
+        <div class="links"><a href="https://github.com/santacroce-tech/financetracker">santacroce-tech/financetracker</a> · <a href="https://financetracker.pro">financetracker.pro</a></div>
+      </article>
+      <article class="card" data-search="pitchvault share a pitch deck as a link and see which slides investors actually read. typescript santacroce-tech/pitchvault">
+        <h3><a href="https://pitchvault.one">PitchVault</a></h3>
+        <p>Share a pitch deck as a link and see which slides investors actually read.</p>
+        <div class="meta"><span class="lang">TypeScript</span><span class="private" title="Private repository">Private</span></div>
+        <div class="links"><a href="https://pitchvault.one">pitchvault.one</a></div>
+      </article>
+      <article class="card" data-search="proofplay provably fair, pari-mutuel virtual sports platform where players can verify every result themselves. typescript santacroce-tech/proofplay">
+        <h3>ProofPlay</h3>
+        <p>Provably fair, pari-mutuel virtual sports platform where players can verify every result themselves.</p>
+        <div class="meta"><span class="lang">TypeScript</span><span class="private" title="Private repository">Private</span></div>
+        
+      </article>
+      <article class="card" data-search="multisig lounge web app for multisig wallet owners to propose, confirm and execute transactions together. typescript santacroce-tech/multisig-lounge">
+        <h3>MultiSig Lounge</h3>
+        <p>Web app for multisig wallet owners to propose, confirm and execute transactions together.</p>
+        <div class="meta"><span class="lang">TypeScript</span><span class="private" title="Private repository">Private</span></div>
+        
+      </article>
+      <article class="card" data-search="pixel pals kid-friendly pixel art editor for android and desktop, in kotlin multiplatform and compose. kotlin rsantacroce/pixel-pals">
+        <h3><a href="https://rsantacroce.github.io/pixel-pals-site/">Pixel Pals</a></h3>
+        <p>Kid-friendly pixel art editor for Android and desktop, in Kotlin Multiplatform and Compose.</p>
+        <div class="meta"><span class="lang">Kotlin</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/pixel-pals">rsantacroce/pixel-pals</a> · <a href="https://rsantacroce.github.io/pixel-pals-site/">rsantacroce.github.io/pixel-pals-site</a></div>
+      </article>
+      <article class="card" data-search="coparent helps separated parents communicate and share obligations, turning conflicts into structured records that can serve as legal evidence. typescript santacroce-tech/coparent">
+        <h3>CoParent</h3>
+        <p>Helps separated parents communicate and share obligations, turning conflicts into structured records that can serve as legal evidence.</p>
+        <div class="meta"><span class="lang">TypeScript</span><span class="private" title="Private repository">Private</span></div>
+        
+      </article>
+      <article class="card" data-search="hai assessment web app to run, score and report an ai-affinity assessment for executives, based on the human-ai leadership competencies framework. python santacroce-tech/humanaicompetencies">
+        <h3>HAI Assessment</h3>
+        <p>Web app to run, score and report an AI-affinity assessment for executives, based on the Human-AI Leadership Competencies framework.</p>
+        <div class="meta"><span class="lang">Python</span><span class="private" title="Private repository">Private</span></div>
+        
+      </article>
+      <article class="card" data-search="life assistant telegram bot for personal work and wellbeing tracking, with hourly check-ins and reports. python santacroce-tech/life-assistant">
+        <h3>Life Assistant</h3>
+        <p>Telegram bot for personal work and wellbeing tracking, with hourly check-ins and reports.</p>
+        <div class="meta"><span class="lang">Python</span><span class="private" title="Private repository">Private</span></div>
+        
+      </article>
+      <article class="card" data-search="imageeditor image editor for ios. swift santacroce-tech/imageeditor">
+        <h3><a href="https://github.com/santacroce-tech/ImageEditor">ImageEditor</a></h3>
+        <p>Image editor for iOS.</p>
+        <div class="meta"><span class="lang">Swift</span></div>
+        <div class="links"><a href="https://github.com/santacroce-tech/ImageEditor">santacroce-tech/ImageEditor</a></div>
+      </article>
+      <article class="card" data-search="dirscanner a directory scanner, exactly as it sounds. c rsantacroce/dirscanner">
+        <h3><a href="https://github.com/rsantacroce/dirscanner">dirscanner</a></h3>
+        <p>A directory scanner, exactly as it sounds.</p>
+        <div class="meta"><span class="lang">C</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/dirscanner">rsantacroce/dirscanner</a></div>
+      </article>
+      </div>
+    </section>
+    <section id="research">
+      <h2>Cryptography, ZK &amp; security <span class="count">6</span></h2>
+      <p class="intro">Experiments, research and safety tooling.</p>
+      <div class="grid">
+      <article class="card" data-search="innerwarden local safety layer for ai agents that use the terminal: screens risky commands and mcp tool calls before they run, with ebpf monitoring and local audit trails. rust innerwarden/innerwarden">
+        <h3>InnerWarden</h3>
+        <p>Local safety layer for AI agents that use the terminal: screens risky commands and MCP tool calls before they run, with eBPF monitoring and local audit trails.</p>
+        <div class="meta"><span class="lang">Rust</span><span class="private" title="Private repository">Private</span></div>
+        
+      </article>
+      <article class="card" data-search="zklisp a small lisp dialect for experimenting with zero-knowledge circuit construction. rust rsantacroce/zklisp">
+        <h3><a href="https://github.com/rsantacroce/zklisp">zklisp</a></h3>
+        <p>A small Lisp dialect for experimenting with zero-knowledge circuit construction.</p>
+        <div class="meta"><span class="lang">Rust</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/zklisp">rsantacroce/zklisp</a></div>
+      </article>
+      <article class="card" data-search="chainlog tamper-evident, hash-chained, pii-aware structured audit log for rust. rust rsantacroce/chainlog">
+        <h3><a href="https://github.com/rsantacroce/chainlog">chainlog</a></h3>
+        <p>Tamper-evident, hash-chained, PII-aware structured audit log for Rust.</p>
+        <div class="meta"><span class="lang">Rust</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/chainlog">rsantacroce/chainlog</a></div>
+      </article>
+      <article class="card" data-search="bitcoin-onn-quantumlike paper: oscillatory neural networks as unconventional computing substrates for cryptanalytic search. tex rsantacroce/bitcoin-onn-quantumlike">
+        <h3><a href="https://github.com/rsantacroce/bitcoin-onn-quantumlike">bitcoin-onn-quantumlike</a></h3>
+        <p>Paper: oscillatory neural networks as unconventional computing substrates for cryptanalytic search.</p>
+        <div class="meta"><span class="lang">TeX</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/bitcoin-onn-quantumlike">rsantacroce/bitcoin-onn-quantumlike</a></div>
+      </article>
+      <article class="card" data-search="zkgame experiment with a zero-knowledge game using plonk. typescript santacroce-tech/zkgame">
+        <h3><a href="https://github.com/santacroce-tech/zkgame">zkgame</a></h3>
+        <p>Experiment with a zero-knowledge game using PLONK.</p>
+        <div class="meta"><span class="lang">TypeScript</span></div>
+        <div class="links"><a href="https://github.com/santacroce-tech/zkgame">santacroce-tech/zkgame</a></div>
+      </article>
+      <article class="card" data-search="lzsent layerzero cross-chain messaging experiment. typescript santacroce-tech/lzsent">
+        <h3><a href="https://github.com/santacroce-tech/lzsent">lzsent</a></h3>
+        <p>LayerZero cross-chain messaging experiment.</p>
+        <div class="meta"><span class="lang">TypeScript</span></div>
+        <div class="links"><a href="https://github.com/santacroce-tech/lzsent">santacroce-tech/lzsent</a></div>
+      </article>
+      </div>
+    </section>
+    <section id="games">
+      <h2>Games <span class="count">5</span></h2>
+      <p class="intro">Games I build in Rust and Bevy, each with its own site and player manual.</p>
+      <div class="grid">
+      <article class="card" data-search="millennium online rpg set around 1999 to 2003. rust · bevy rsantacroce/millennium">
+        <h3><a href="https://rsantacroce.github.io/millennium-site/">Millennium</a></h3>
+        <p>Online RPG set around 1999 to 2003.</p>
+        <div class="meta"><span class="lang">Rust · Bevy</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/millennium">rsantacroce/millennium</a> · <a href="https://rsantacroce.github.io/millennium-site/">rsantacroce.github.io/millennium-site</a></div>
+      </article>
+      <article class="card" data-search="parcels co-op and competitive neighbourhood city builder: one shared map, separate parcels and budgets, and power and water traded between neighbours. lan multiplayer, ai rivals, street view. rust · bevy rsantacroce/parcels">
+        <h3><a href="https://rsantacroce.github.io/parcels-site/">Parcels</a></h3>
+        <p>Co-op and competitive neighbourhood city builder: one shared map, separate parcels and budgets, and power and water traded between neighbours. LAN multiplayer, AI rivals, street view.</p>
+        <div class="meta"><span class="lang">Rust · Bevy</span></div>
+        <div class="links"><a href="https://github.com/rsantacroce/parcels">rsantacroce/parcels</a> · <a href="https://rsantacroce.github.io/parcels-site/">rsantacroce.github.io/parcels-site</a></div>
+      </article>
+      <article class="card" data-search="societies open-source, turn-based 4x strategy game. rust · bevy rsantacroce/societies">
+        <h3><a href="https://rsantacroce.github.io/societies-site/">Societies</a></h3>
+        <p>Open-source, turn-based 4X strategy game.</p>
+        <div class="meta"><span class="lang">Rust · Bevy</span><span class="private" title="Private repository">Private</span></div>
+        <div class="links"><a href="https://rsantacroce.github.io/societies-site/">rsantacroce.github.io/societies-site</a></div>
+      </article>
+      <article class="card" data-search="harrow reach 3d space game where single-player and multiplayer are the same program. rust rsantacroce/harrow-reach">
+        <h3><a href="https://rsantacroce.github.io/harrow-reach-site/">Harrow Reach</a></h3>
+        <p>3D space game where single-player and multiplayer are the same program.</p>
+        <div class="meta"><span class="lang">Rust</span><span class="private" title="Private repository">Private</span></div>
+        <div class="links"><a href="https://rsantacroce.github.io/harrow-reach-site/">rsantacroce.github.io/harrow-reach-site</a></div>
+      </article>
+      <article class="card" data-search="iron atoll lightweight real-time strategy: two fortified atolls, an economy under fog of war, recon drones. a metal marines remake. rust rsantacroce/iron-atoll">
+        <h3>Iron Atoll</h3>
+        <p>Lightweight real-time strategy: two fortified atolls, an economy under fog of war, recon drones. A Metal Marines remake.</p>
+        <div class="meta"><span class="lang">Rust</span><span class="private" title="Private repository">Private</span></div>
+        
+      </article>
+      </div>
+    </section>
+    <p class="empty" id="empty">No projects match that filter.</p>
+  </main>
+
+  <footer>
+    <div class="wrap">Projects marked <strong>Private</strong> have closed source; where they have a public site, the name links to it.</div>
+  </footer>
+
+<script>
+  const q = document.getElementById('q');
+  const empty = document.getElementById('empty');
+  q.addEventListener('input', () => {
+    const term = q.value.trim().toLowerCase();
+    let shown = 0;
+    document.querySelectorAll('section').forEach(sec => {
+      let n = 0;
+      sec.querySelectorAll('.card').forEach(c => {
+        const hit = !term || c.dataset.search.includes(term);
+        c.hidden = !hit; if (hit) n++;
+      });
+      sec.hidden = n === 0; shown += n;
+    });
+    empty.style.display = shown ? 'none' : 'block';
+  });
+</script>
+</body>
+</html>

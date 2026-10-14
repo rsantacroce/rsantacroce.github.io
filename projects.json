@@ -1,0 +1,413 @@
+{
+  "profile": {
+    "name": "Roberto Santacroce Martins",
+    "tagline": "Programmer. I contribute to open source in my spare time, mostly around Bitcoin and local-first software.",
+    "bio": [
+      "I'm a programmer from Brazil, living in Madrid. I've been writing software for a little over twenty years and I still enjoy it.",
+      "In my free time I contribute to open source, mainly Drivechain (BIP300/301) and Layer Two Labs sidechains, and I build small tools I want to use myself: local-first apps, a Lisp for personal data, and a few games.",
+      "I mostly write Rust, C/C++, Swift and TypeScript, and I like software that runs locally and doesn't need permission to exist."
+    ],
+    "links": [
+      {
+        "label": "Blog: Pensaduras",
+        "url": "https://roberto.santacroce.xyz"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/rsantacroce"
+      },
+      {
+        "label": "santacroce-tech",
+        "url": "https://github.com/santacroce-tech"
+      },
+      {
+        "label": "X / Twitter",
+        "url": "https://x.com/santacrocerob"
+      },
+      {
+        "label": "Email",
+        "url": "mailto:info@santacroce.xyz"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "bitcoin",
+      "title": "Bitcoin & Drivechain",
+      "intro": "My own Bitcoin tooling, mostly around BIP300/301 drivechains.",
+      "projects": [
+        {
+          "name": "simplepool",
+          "desc": "Single-binary C11 stratum mining pool for drivechain networks: solo, PPS and PPLNS payouts, a SQLite ledger, and Thunder or L1 payouts.",
+          "repo": "LayerTwo-Labs/simplepool",
+          "lang": "C"
+        },
+        {
+          "name": "forknet-bootstrap",
+          "desc": "Provisions a full BIP300/301 forknet node (bitcoind, enforcer, Thunder and a simplepool mining pool) on a fresh Ubuntu server.",
+          "repo": "rsantacroce/forknet-bootstrap",
+          "lang": "Shell"
+        },
+        {
+          "name": "btc-keytool",
+          "desc": "Offline Bitcoin key and transaction tool. One file, no dependencies, no network: derive every address type from a private key and sign transactions air-gapped.",
+          "repo": "rsantacroce/btc-keytool",
+          "lang": "Python"
+        },
+        {
+          "name": "Kleo",
+          "desc": "Desktop crypto workbench keyed to BitNames: sign, verify, encrypt and decrypt by name, publish a profile, and message peer to peer.",
+          "repo": "rsantacroce/kleo",
+          "private": true,
+          "lang": "Rust"
+        },
+        {
+          "name": "hashrate_derivative",
+          "desc": "A minimal, working cash-settled hashrate forward on the Liquid Network.",
+          "repo": "rsantacroce/hashrate_derivative",
+          "lang": "Rust"
+        },
+        {
+          "name": "python-bridge-drivechain",
+          "desc": "Relays Bitcoin mainnet transactions to a fork chain, either streaming over ZMQ or block by block.",
+          "repo": "rsantacroce/python-bridge-drivechain",
+          "lang": "Python"
+        },
+        {
+          "name": "drivechain-explorer",
+          "desc": "Address viewer and explorer for drivechain transactions, with a small Flask backend.",
+          "repo": "santacroce-tech/drivechain-explorer",
+          "lang": "HTML"
+        },
+        {
+          "name": "docker-mainchain-qt",
+          "desc": "Docker files to build and run the drivechain mainchain-qt client.",
+          "repo": "rsantacroce/docker-mainchain-qt",
+          "lang": "Shell"
+        },
+        {
+          "name": "open-bitcoin",
+          "desc": "An open, from-scratch Bitcoin implementation in C++.",
+          "repo": "rsantacroce/open-bitcoin",
+          "lang": "C++"
+        },
+        {
+          "name": "bitcoin-lisp",
+          "desc": "A Bitcoin implementation in Lisp. Work in progress.",
+          "repo": "rsantacroce/bitcoin-lisp",
+          "lang": "Lisp"
+        },
+        {
+          "name": "BIP300 / Drivechain",
+          "desc": "Explainers on BIP300 and BIP301, Hashrate Escrows and Blind Merged Mining.",
+          "url": "https://bip300.xyz",
+          "lang": "Web"
+        }
+      ]
+    },
+    {
+      "id": "upstream",
+      "title": "Upstream contributions",
+      "intro": "Open-source projects I contribute to.",
+      "projects": [
+        {
+          "name": "bip300301_enforcer",
+          "desc": "CUSF software enforcing the BIP300 and BIP301 rules.",
+          "repo": "LayerTwo-Labs/bip300301_enforcer",
+          "lang": "Rust"
+        },
+        {
+          "name": "bip300_bip301_specifications",
+          "desc": "Implementation-ready specifications for BIP300 and BIP301.",
+          "repo": "LayerTwo-Labs/bip300_bip301_specifications",
+          "lang": "Spec"
+        },
+        {
+          "name": "cusf-enforcer-mempool",
+          "desc": "Fixes getblocktemplate so it always mines CUSF-compliant blocks.",
+          "repo": "LayerTwo-Labs/cusf-enforcer-mempool",
+          "lang": "Rust"
+        },
+        {
+          "name": "thunder-rust",
+          "desc": "A sidechain with a large, growing block size, plus fraud proofs.",
+          "repo": "LayerTwo-Labs/thunder-rust",
+          "lang": "Rust"
+        },
+        {
+          "name": "coinshift-rs",
+          "desc": "BIP300-style sidechain with a peer-to-peer, trustless L2-to-L1 swap system.",
+          "repo": "LayerTwo-Labs/coinshift-rs",
+          "lang": "Rust"
+        },
+        {
+          "name": "mining-pools",
+          "desc": "Mining pools for drivechain networks.",
+          "repo": "LayerTwo-Labs/mining-pools"
+        },
+        {
+          "name": "bitcoin-patched",
+          "desc": "Layer Two Labs' version of Bitcoin Core.",
+          "repo": "LayerTwo-Labs/bitcoin-patched",
+          "lang": "C++"
+        },
+        {
+          "name": "cpuminer",
+          "desc": "CPU miner for Litecoin and Bitcoin.",
+          "repo": "LayerTwo-Labs/cpuminer",
+          "lang": "C"
+        },
+        {
+          "name": "sidechain-explorer",
+          "desc": "Block explorer for drivechain sidechains.",
+          "repo": "LayerTwo-Labs/sidechain-explorer"
+        },
+        {
+          "name": "libbitcoin-node",
+          "desc": "Bitcoin full node from the libbitcoin project.",
+          "repo": "libbitcoin/libbitcoin-node",
+          "lang": "C++"
+        },
+        {
+          "name": "fast-facts",
+          "desc": "Practical guides: how to split coins, how to mine, and more.",
+          "repo": "ecash-com/fast-facts"
+        }
+      ]
+    },
+    {
+      "id": "eelisp",
+      "title": "EELisp & editors",
+      "intro": "A Lisp for personal data management, inspired by dBASE III and Lotus Agenda, and the editors built around it.",
+      "projects": [
+        {
+          "name": "EEditor",
+          "desc": "Fast native editor for Apple platforms with Markdown preview, syntax highlighting for 24+ languages, and a built-in Lisp REPL.",
+          "url": "https://eeditor.app",
+          "repo": "santacroce-tech/eeditor",
+          "private": true,
+          "lang": "Swift"
+        },
+        {
+          "name": "eeditor-next",
+          "desc": "The next EEditor: native Markdown and code editor with embedded EELisp, built on TypeScript, CodeMirror 6 and Tauri for desktop and iOS.",
+          "repo": "santacroce-tech/eeditor-next",
+          "lang": "TypeScript"
+        },
+        {
+          "name": "EELisp",
+          "desc": "The original EELisp interpreter in Swift: a Lisp for personal data management.",
+          "url": "https://eelisp.app",
+          "repo": "santacroce-tech/eelisp",
+          "private": true,
+          "lang": "Swift"
+        },
+        {
+          "name": "eelisp-rs",
+          "desc": "EELisp in Rust: embedded Lisp interpreter, SQLite storage, and a Lotus-Agenda-style PIM engine.",
+          "repo": "santacroce-tech/eelisp-rs",
+          "lang": "Rust"
+        },
+        {
+          "name": "EEPilot",
+          "desc": "macOS app and CLI that uses a local LLM to write EELisp mini-apps from plain-English descriptions.",
+          "repo": "santacroce-tech/eepilot",
+          "private": true,
+          "lang": "Swift"
+        },
+        {
+          "name": "zzeelisp",
+          "desc": "Utility library of 120+ EELisp functions in 10 themed modules, inspired by Funções ZZ.",
+          "repo": "santacroce-tech/zzeelisp",
+          "private": true,
+          "lang": "Lisp"
+        }
+      ]
+    },
+    {
+      "id": "apps",
+      "title": "Apps & products",
+      "intro": "Local-first apps and small products I build.",
+      "projects": [
+        {
+          "name": "Qvault",
+          "desc": "Finds and redacts personal data in legal documents (PDFs, Word files, scans) so the redacted text is really gone. Runs entirely on your machine.",
+          "url": "https://qvault.tech",
+          "repo": "santacroce-tech/qvault",
+          "lang": "Rust · Tauri"
+        },
+        {
+          "name": "Zoetrope",
+          "desc": "Flash-style animation studio: draw, animate, script in JavaScript, and export one HTML file that plays anywhere. Rust/WASM core, Tauri app for macOS, Windows and Linux.",
+          "url": "https://santacroce-tech.github.io/zoetrope/",
+          "repo": "santacroce-tech/zoetrope",
+          "lang": "Rust"
+        },
+        {
+          "name": "SuperSynch",
+          "desc": "Syncthing on iPhone and iPad: sync folders straight with your Mac, peer to peer. Native SwiftUI with an embedded Syncthing engine.",
+          "url": "https://santacroce-tech.github.io/supersynch/",
+          "repo": "santacroce-tech/supersynch",
+          "lang": "Swift"
+        },
+        {
+          "name": "Finance Tracker",
+          "desc": "Local-first personal finance tracker in Tauri and Rust.",
+          "url": "https://financetracker.pro",
+          "repo": "santacroce-tech/financetracker",
+          "lang": "Rust · Tauri"
+        },
+        {
+          "name": "PitchVault",
+          "desc": "Share a pitch deck as a link and see which slides investors actually read.",
+          "url": "https://pitchvault.one",
+          "repo": "santacroce-tech/pitchvault",
+          "private": true,
+          "lang": "TypeScript"
+        },
+        {
+          "name": "ProofPlay",
+          "desc": "Provably fair, pari-mutuel virtual sports platform where players can verify every result themselves.",
+          "repo": "santacroce-tech/proofplay",
+          "private": true,
+          "lang": "TypeScript"
+        },
+        {
+          "name": "MultiSig Lounge",
+          "desc": "Web app for multisig wallet owners to propose, confirm and execute transactions together.",
+          "repo": "santacroce-tech/multisig-lounge",
+          "private": true,
+          "lang": "TypeScript"
+        },
+        {
+          "name": "Pixel Pals",
+          "desc": "Kid-friendly pixel art editor for Android and desktop, in Kotlin Multiplatform and Compose.",
+          "url": "https://rsantacroce.github.io/pixel-pals-site/",
+          "repo": "rsantacroce/pixel-pals",
+          "lang": "Kotlin"
+        },
+        {
+          "name": "CoParent",
+          "desc": "Helps separated parents communicate and share obligations, turning conflicts into structured records that can serve as legal evidence.",
+          "repo": "santacroce-tech/coparent",
+          "private": true,
+          "lang": "TypeScript"
+        },
+        {
+          "name": "HAI Assessment",
+          "desc": "Web app to run, score and report an AI-affinity assessment for executives, based on the Human-AI Leadership Competencies framework.",
+          "repo": "santacroce-tech/humanaicompetencies",
+          "private": true,
+          "lang": "Python"
+        },
+        {
+          "name": "Life Assistant",
+          "desc": "Telegram bot for personal work and wellbeing tracking, with hourly check-ins and reports.",
+          "repo": "santacroce-tech/life-assistant",
+          "private": true,
+          "lang": "Python"
+        },
+        {
+          "name": "ImageEditor",
+          "desc": "Image editor for iOS.",
+          "repo": "santacroce-tech/ImageEditor",
+          "lang": "Swift"
+        },
+        {
+          "name": "dirscanner",
+          "desc": "A directory scanner, exactly as it sounds.",
+          "repo": "rsantacroce/dirscanner",
+          "lang": "C"
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "title": "Cryptography, ZK & security",
+      "intro": "Experiments, research and safety tooling.",
+      "projects": [
+        {
+          "name": "InnerWarden",
+          "desc": "Local safety layer for AI agents that use the terminal: screens risky commands and MCP tool calls before they run, with eBPF monitoring and local audit trails.",
+          "repo": "InnerWarden/innerwarden",
+          "private": true,
+          "lang": "Rust"
+        },
+        {
+          "name": "zklisp",
+          "desc": "A small Lisp dialect for experimenting with zero-knowledge circuit construction.",
+          "repo": "rsantacroce/zklisp",
+          "lang": "Rust"
+        },
+        {
+          "name": "chainlog",
+          "desc": "Tamper-evident, hash-chained, PII-aware structured audit log for Rust.",
+          "repo": "rsantacroce/chainlog",
+          "lang": "Rust"
+        },
+        {
+          "name": "bitcoin-onn-quantumlike",
+          "desc": "Paper: oscillatory neural networks as unconventional computing substrates for cryptanalytic search.",
+          "repo": "rsantacroce/bitcoin-onn-quantumlike",
+          "lang": "TeX"
+        },
+        {
+          "name": "zkgame",
+          "desc": "Experiment with a zero-knowledge game using PLONK.",
+          "repo": "santacroce-tech/zkgame",
+          "lang": "TypeScript"
+        },
+        {
+          "name": "lzsent",
+          "desc": "LayerZero cross-chain messaging experiment.",
+          "repo": "santacroce-tech/lzsent",
+          "lang": "TypeScript"
+        }
+      ]
+    },
+    {
+      "id": "games",
+      "title": "Games",
+      "intro": "Games I build in Rust and Bevy, each with its own site and player manual.",
+      "projects": [
+        {
+          "name": "Millennium",
+          "desc": "Online RPG set around 1999 to 2003.",
+          "url": "https://rsantacroce.github.io/millennium-site/",
+          "repo": "rsantacroce/millennium",
+          "lang": "Rust · Bevy"
+        },
+        {
+          "name": "Parcels",
+          "desc": "Co-op and competitive neighbourhood city builder: one shared map, separate parcels and budgets, and power and water traded between neighbours. LAN multiplayer, AI rivals, street view.",
+          "url": "https://rsantacroce.github.io/parcels-site/",
+          "repo": "rsantacroce/parcels",
+          "lang": "Rust · Bevy"
+        },
+        {
+          "name": "Societies",
+          "desc": "Open-source, turn-based 4X strategy game.",
+          "url": "https://rsantacroce.github.io/societies-site/",
+          "repo": "rsantacroce/societies",
+          "private": true,
+          "lang": "Rust · Bevy"
+        },
+        {
+          "name": "Harrow Reach",
+          "desc": "3D space game where single-player and multiplayer are the same program.",
+          "url": "https://rsantacroce.github.io/harrow-reach-site/",
+          "repo": "rsantacroce/harrow-reach",
+          "private": true,
+          "lang": "Rust"
+        },
+        {
+          "name": "Iron Atoll",
+          "desc": "Lightweight real-time strategy: two fortified atolls, an economy under fog of war, recon drones. A Metal Marines remake.",
+          "repo": "rsantacroce/iron-atoll",
+          "private": true,
+          "lang": "Rust"
+        }
+      ]
+    }
+  ]
+}
